@@ -1,0 +1,252 @@
+body {  
+  display: grid;
+  /* background: rgb(39,68,68);
+background: linear-gradient(180deg, rgba(39,68,68,1) 0%, rgba(50,86,86,1) 80%, rgba(75,119,119,1) 100%);  */
+/* background: #274444;
+background: linear-gradient(180deg, rgba(39,68,68,1) 30%, rgba(50,86,86,1) 70%, #4b7777 100%); */
+/* background-image: url(../images/table2.png); */
+background: url(../images/table2.png) ;
+background-repeat: no-repeat;
+/* background-size: cover; */
+background-size:auto;
+  /* grid-template-columns: 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66%;  */
+  /*👇hard coded for 1600x900(796vh)*/
+  grid-template-columns: 104.42px 104.42px 104.42px 104.42px 104.42px 104.42px 104.42px 104.42px 104.42px 104.42px 104.42px 104.42px 104.42px 104.42px 104.42px;
+  /* grid-template-rows: 20% 5% 30% 5% 20% 10% 10%;  */
+  /*👇hard coded for 1600x900(796vh)*/
+  grid-template-rows: 156.02px 39px 234.02px 39px 156.02px 78px 78px; 
+  gap: 0px 0px; 
+  /* grid-template-areas: 
+    ". . . . . Dealer Dealer Dealer Dealer Dealer . . . . ."
+    ". . . . . . DealerTotal DealerTotal DealerTotal . . . . . ."
+    ". . . . . Message Message Message Message Message . . . . ."
+    ". Player2 Player2 . betMove betMove PlayerTotal PlayerTotal PlayerTotal PlayerMenu PlayerMenu . Player3 Player3 ."
+    ". Player2 Player2 . betMove betMove Player Player Player PlayerMenu PlayerMenu . Player3 Player3 ."
+    ". . . . betMove betMove Betting Betting Betting PlayerMenu PlayerMenu . . . ."
+    ". . . . betMove betMove Score Score Score PlayerMenu PlayerMenu . . . .";  */
+  width:98vw;
+  height:98vh;
+  color:white;
+}
+
+#dealerArea{
+  grid-area:Dealer;
+  grid-area:1/7/2/10;
+  /* border-style:dotted;
+  border-radius: 10%; */
+}
+#dealerTotal{
+  grid-area:DealerTotal;
+  grid-area:2/7/3/10;
+  place-self: center;
+  margin: 0 0;
+  }
+/* #discardArea{
+  grid-area:2/8/3/9;
+  border-style:dotted;
+} */
+#messageArea{
+  grid-area:Message;
+  grid-area:3/6/4/11;
+  /* border-style:dotted; */
+  place-self: center;
+  cursor:pointer;
+}
+#playerTotal{
+  grid-area:PlayerTotal;
+  grid-area:4/7/5/10;
+  place-self: center;
+  margin: 0 0;
+}
+
+#playerArea{
+  grid-area:Player;
+  grid-area:5/7/6/10;
+  /* border-style:dotted;
+  border-radius: 10%; */
+}
+#scoreboard{
+  grid-area:Score;
+  grid-area:7/7/8/10;
+  place-self:center;
+  border-style: none none solid none;
+  border-radius: 70%;
+  margin-top:-20px; 
+  padding:10px 20px;
+  background-color:black;
+}
+.betArea{
+  grid-area:betting;
+  grid-area:6/7/7/10;
+  /* background-color:gray; */
+  
+  border:5px;
+  border-style:none solid none solid;
+  border-radius:50%;
+}
+#betting{
+  display:grid;
+  height:78px;
+  
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 100%;
+  /* background-color:black; */
+  font-size:20px;
+  align-items: center;
+  justify-items: center;
+}
+
+#playerHand{
+  width:50%;
+  margin-left:auto;
+  margin-right:auto;
+  justify-content: center;
+  display:grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(10px, max-content)); */
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: 50% 50%;
+}
+#dealerHand{
+  width:50%;
+  
+  margin-left:auto;
+  margin-right:auto;
+  justify-content: center;
+  display:grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+
+.btn-group button {
+  /* background-color: black;  */
+  background: rgb(134,0,0);
+background: linear-gradient(19deg, rgba(134,0,0,1) 0%, rgba(205,24,61,1) 68%, rgba(255,59,99,1) 100%);
+  /* border-style: none none solid none; */
+  border-style: solid;
+  border-color:white;
+  
+  border-radius:30%;
+  color: white; 
+  margin: 10px 0 0 0;
+  padding: 10px 10px; 
+  
+  width:100%;
+  display:block;
+}
+
+.playerMove{
+  grid-area:PlayerMenu;
+  grid-area:4/10/8/12;
+  
+}
+
+
+#moves{
+  visibility: visible;
+  width:60%;
+  border-radius: 50%;
+  margin-left:auto;
+  margin-right:auto;
+  
+}
+
+.moveList{
+  visibility:hidden;
+  display:grid;
+  grid-template-rows:54.6px 54.6px 54.6px 54.6px 54.6px;
+  
+}
+
+#double{
+  visibility: hidden;
+}
+#split{
+  visibility: hidden;
+}
+
+.betMove{
+  grid-area:betMove;
+  grid-area:4/5/8/7;
+}
+
+#movesBet{
+  visibility:visible;
+  width:60%;
+  border-radius: 70%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.betList{
+  visibility: hidden;
+  display:grid;
+  grid-template-rows:90px 90px 90px;
+}
+
+.moveList button:hover {
+  background: #a2862c;
+background: linear-gradient(350deg, rgba(162,134,44,1) 30%, rgba(212,175,55,1) 60%, rgba(255,255,255,1) 100%);
+  font-weight:bolder;
+  color:black;
+  border-color:#a2862c;
+
+}
+.betList button:hover {
+  background: rgb(162,134,44);
+background: linear-gradient(350deg, rgba(162,134,44,1) 30%, rgba(212,175,55,1) 60%, rgba(255,255,255,1) 100%);
+  font-weight:bolder;
+  color:black;
+  border-color:#a2862c;
+
+}
+
+.gold-gradient-text{
+  background-image: linear-gradient(350deg, rgba(162,134,44,1) 30%, rgba(212,175,55,1) 40%, rgba(255,255,255,1) 100%);
+  background: size 100%;
+  background-clip:text;
+  -webkit-background-clip:text;
+  -moz-background-clip:text;
+  /* background-clip:text; */
+  -webkit-text-fill-color:transparent;
+  -moz-text-fill-color:transparent;
+}
+.red-gradient-text{
+background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,187,45,1) 100%);
+  background: size 100%;
+  background-clip:text;
+  -webkit-background-clip:text;
+  -moz-background-clip:text;
+  /* background-clip:text; */
+  -webkit-text-fill-color:transparent;
+  -moz-text-fill-color:transparent;
+
+}
+
+.redText{
+  color:rgb(255, 0, 0);
+}
+.greenText{
+  color:rgb(80, 200, 120);
+}
+
+.cardFlip{
+  animation: flipInX;
+}
+.cardSlideDown{
+  animation:slideInDown;
+}
+
+.chip{
+  width:50%;
+}
+
+
+@media screen and (max-width:688px){
+  body{
+  background: url(../images/table2.png);
+  background-size:cover;
+  background-repeat:no-repeat;
+  /* background: no-repeat center center fixed; */
+  grid-template-columns: 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66% 6.66%;
+  grid-template-rows: 20% 5% 30% 5% 20% 10% 10%; 
+  }
+}
